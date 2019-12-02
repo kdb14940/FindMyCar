@@ -28,7 +28,6 @@ Car* addCar();
 int main() {
 	// Building hash table and bst
 	HeadNode headNode;
-	//TODO HASHTABLE
 
 	fillList(headNode);
 	// transfer data file to hash and bst
@@ -70,7 +69,6 @@ int main() {
 			}
 			else {
 				headNode.del(key);
-				//writeToFile(headNode); // something to rewrite to file 
 			}
 			break;
 		}
@@ -126,7 +124,6 @@ int main() {
 
 	// End message
 
-	system("pause");
 	return 0;
 }
 

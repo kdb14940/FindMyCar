@@ -19,26 +19,6 @@
  }
 
 
- /*
- std::ostream& operator << (std::ostream& os, const Car &c) {
-
-	 os << "MAKE:" << std::setw(24) << std::right <<  c.make 
-		 << std::setfill('-') << std::setw(69) << std::endl
-
-		 << "MODEL: \t\t|" << std::setw(31) << std::right << c.modelName << "\t\n"
-		 << std::setfill('-') << std::setw(69) << std::endl
-
-		 << "CITY/HWY MPG:\t|" << std::setw(25) << std::right << c.mpg << "\t\t\n"
-		 << std::setfill('-') << std::setw(69) << std::endl
-
-		 << "HORSEPOWER:\t|" << std::setw(25) << std::right << c.horsePower << "\t\t\n"
-		 << std::setfill('-') << std::setw(69) << std::endl
-
-		 << "MSRP:\t\t|" << std::setw(20) << std::right << "$" << c.avgPrice << "\t\n"
-		 << std::setfill('=') << std::setw(69) << std::endl;
-	 return os;
- }
- */
 
  std::istream& operator >> (std::istream& is, Car &c)
  {
@@ -78,22 +58,3 @@
 		 << c.horsePower << std::endl;
 	 return os;
 }
- /*
- std::istream& operator >> (std::istream& is, Car &c) {
-	 std::cout << "Enter car information in the format : \n"
-			   << "Make Model Price MPG Horsepower\n"
-			   << "For example: Honda Civic 18940 32 205";
-	 std::string make;
-	 std::string name;
-	 double price;
-	 double mpg;
-	 double horsePower;
-	 is >> make >> name >> price >> mpg >> horsePower;
-	 c.setMake(make);
-	 c.setModelName(name);
-	 c.setAvgPrice(price);
-	 c.setMpg(mpg);
-	 c.setHorsePower(horsePower);
-	 return is;
- }
- */

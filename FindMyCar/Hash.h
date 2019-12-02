@@ -113,48 +113,6 @@ HashTable<T>::~HashTable()
 	clear();
 	delete[] arr;
 }
-/*
-template<typename T>
-int HashTable<T>::getLongestLinkList()
-{
-	HashNode<T>* pointer;				// points to nodes in linked list
-	int longest = 0;
-	int count = 0;
-	for (int i = 0; i < getMaxSize(); i++) {		// goes through every index in array
-		if (arr[i] != NULL) {						// if no data, skip
-			pointer = arr[i];						// start process
-			while (node != NULL) {
-				func(arr[i]->getData());
-				pointer = pointer->getNext();
-				count++;
-			}
-			if (count > longest)
-				longest = count;
-		}
-	}
-	return longest;
-}
-*/
-
-/*
-template<typename T>
-double HashTable<T>::getAverageLinkList()
-{
-	HashNode<T>* pointer;							// points to nodes in linked list
-	int sum = 0;
-	for (int i = 0; i < getMaxSize(); i++) {		// goes through every index in array
-		if (arr[i] != NULL) {						// if no data, skip
-			pointer = arr[i];						// start process
-			while (node != NULL) {
-				func(arr[i]->getData());
-				pointer = pointer->getNext();
-				sum++;
-			}
-		}
-	}
-	return (double)sum / (double)currSize;
-}
-*/
 
 /*
 Adds a data entry to the hash table
@@ -185,45 +143,6 @@ void HashTable<T>::insert(std::string key, T value)
 	currSize++;
 }
 
-/*
-Removes the entry in the hash table
-Pre: string key - the unique value of the entry
-Post: Removes the item from the hash table
-Return: Nothing
-*/
-/*
-template<typename T>
-void HashTable<T>::remove(std::string key)
-{
-	int i = hashFunc(key);
-	if (arr[i] != NULL) {
-		HashNode<T>* prevNode = NULL;
-		HashNode<T>* node = arr[i];
-		bool isMore = false;
-		while (node->getNext() != NULL && node->getIdentity() != key) {
-			prevNode = node;
-			node = node->getNext();
-			isMore = true;
-		}
-		if (node->getIdentity() == key) {
-			if (prevNode == NULL) {
-				HashNode<T>* nextNode = node->getNext();
-				delete node;
-				arr[i] = nextNode;
-			}
-			else {
-				HashNode<T>* next = node->getNext();
-				delete node;
-				prevNode->setNext(next);
-			}
-		}
-	}
-	if (isMore == true)
-		loadFactor--;
-	currSize--;
-	// if found remove, otherwise error
-}
-*/
 /*
 Removes all entries from the hash table
 Pre: None
@@ -302,25 +221,4 @@ bool HashTable<T>::contains(std::string key)
 	}
 }
 
-/*
-Traverse the hash table in order of index and calls a function for each entry
-Pre: void func(HashNode<T>*) - function that runs for every entry
-Post: function has processed each entry
-Return: none
-*/
-/*
-template<typename T>
-void HashTable<T>::traverse(void(*func)(HashNode<T>*)) const
-{
-	HashNode<T>* pointer;							// points to nodes in linked list
-	for (int i = 0; i < getMaxSize(); i++) {		// goes through every index in array
-		if (arr[i] != NULL) {						// if no data, skip
-			pointer = arr[i];						// start process
-			while (node != NULL) {
-				func(arr[i]->getData());
-				pointer = pointer->getNext();
-			}
-		}
-	}
-}
-*/
+
